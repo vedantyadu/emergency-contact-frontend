@@ -31,7 +31,7 @@ export type GenericObject = {
 }
 
 export const configureAxios = () => {
-  axios.defaults.baseURL = 'http://192.168.1.9:5000/'
+  axios.defaults.baseURL = 'https://emergencycontactbackend.vedantyadu.online/'
   axios.defaults.withCredentials = true
 }
 
