@@ -23,7 +23,7 @@ export default function DetailForm({formData, setFormData}: {formData: GenericOb
     <View style={stylesheet.view}>
       <FormInput mode='text' title='Full name' value={formData.fullname} onChange={(newData) => setData('fullname', newData)}/>
       <FormInput mode='numeric' title='Phone number' value={formData.phone} onChange={(newData) => setData('phone', newData)}/>
-      <DateInput title='Date of birth (yyyy-mm-dd)' date={formData.dob? formData.dob?.slice(0, 10) | null} setDate={(newData) => setData('dob', new Date(newData).toISOString())}/>
+      <DateInput title='Date of birth (yyyy-mm-dd)' date={formData.dob? formData.dob?.slice(0, 10): null} setDate={(newData) => setData('dob', new Date(newData).toISOString())}/>
       <MultiFormInput title='Contacts' mode='numeric' values={formData.contacts || []} onChange={(newData) => setData('contacts', newData)}/>
       <FormInput mode='numeric' title='Height (cm)' value={formData.height} onChange={(newData) => setData('height', Number(newData))}/>
       <FormInput mode='numeric' title='Weight (kg)' value={formData.weight} onChange={(newData) => setData('weight', Number(newData))}/>
