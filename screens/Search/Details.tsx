@@ -28,7 +28,7 @@ export function Details() {
         <SingleLineData text='Full name' value={details?.fullname}/>
         <SingleLineData text='Email' value={details?.email}/>
         <SingleLineData text='Phone' value={details?.phone}/>
-        <SingleLineData text='Date of birth (yyyy-mm-dd)' value={details?.dob.slice(0, 10)}/>
+        <SingleLineData text='Date of birth (yyyy-mm-dd)' value={details?.dob? details?.dob.slice(0, 10): null}/>
         <MultiLineData text='Contacts' value={details?.contacts}/>
         <SingleLineData text='Blood group' value={details?.bloodtype}/>
         <SingleLineData text='Height (cm)' value={details?.height}/>
