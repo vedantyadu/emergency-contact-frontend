@@ -8,6 +8,8 @@ import { Image } from 'expo-image'
 import * as ImagePicker from 'expo-image-picker'
 import axios, { AxiosError } from 'axios'
 import { getItem } from '@/utils/store'
+import LogoutButton from './LogoutButton'
+
 
 
 export default function Profile() {
@@ -95,6 +97,7 @@ export default function Profile() {
           <Text style={stylesheet.buttontext}>Reset</Text>
         </Pressable>
       </View>
+      <LogoutButton/>
     </ScrollView>
   )
 }

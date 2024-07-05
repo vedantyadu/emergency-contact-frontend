@@ -5,7 +5,7 @@ import { getItem } from '@/utils/store'
 
 type Auth = {
   auth: boolean,
-  id: string
+  id: string | undefined
 }
 
 type ContextValue = {

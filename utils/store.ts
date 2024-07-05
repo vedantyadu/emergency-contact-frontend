@@ -11,6 +11,14 @@ export function setItem(key: string, value: string) {
   }
 }
 
+export async function deleteItem(key: string) {
+  if (Platform.OS == 'web') {
+    localStorage.removeItem(key)
+  }
+  else {
+    await secureStore.deleteItemAsync(key)
+  }
+}
 
 export function getItem(key: string) {
   if (Platform.OS == 'web') {
