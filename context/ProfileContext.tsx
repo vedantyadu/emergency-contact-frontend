@@ -45,16 +45,21 @@ export default function ProfileProvider({children}: {children: ReactElement}) {
     }
 
     const generateQR = async () => {
-      const response = await axios.get('/qr/generate', {
-        params: {
-          color: COLORS.text,
-          bgcolor: COLORS.highlight1
-        },
-        headers: {
-          authorization: getItem('authtoken') || ''
-        }
-      })
-      setQRURI(response.data.svg)
+      try {
+        const response = await axios.get('/qr/generate', {
+          params: {
+            color: COLORS.text,
+            bgcolor: COLORS.highlight1
+          },
+          headers: {
+            authorization: getItem('authtoken') || ''
+          }
+        })
+        setQRURI(response.data.svg)
+      }
+      catch (err) {
+        console.log(err)
+      }
     }
 
     getData()

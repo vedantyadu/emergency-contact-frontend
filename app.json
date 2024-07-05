@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Emergency Contact",
-    "slug": "Emergency Contact",
+    "name": "Emergency-Contact",
+    "slug": "Emergency-Contact",
     "version": "1.0.0",
     "scheme": "emergencycontact",
     "orientation": "portrait",
@@ -22,7 +22,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.vedantyadu.EmergencyContact"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,7 +41,7 @@
         }
       ],
       [
-        "expo-build-properties", 
+        "expo-build-properties",
         {
           "android": {
             "usesCleartextTraffic": true
@@ -45,6 +50,11 @@
       ],
       "expo-secure-store",
       "expo-build-properties"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a22d2900-c196-4811-808b-f3fd1395153f"
+      }
+    }
   }
 }

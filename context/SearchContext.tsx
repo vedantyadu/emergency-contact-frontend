@@ -19,9 +19,14 @@ export function SearchProvider({children}: {children: ReactElement}) {
 
   useEffect(() => {
     const fetchUserDetails = async () => {
-      const res = await axios.get(`/profile/search/${id}`)
-      setDetails(res.data)
-      console.log(res.data)
+      try {
+        const res = await axios.get(`/profile/search/${id}`)
+        setDetails(res.data)
+        console.log(res.data)
+      }
+      catch (err) {
+        console.log(err)
+      }
     }
     if (id) {
       fetchUserDetails()

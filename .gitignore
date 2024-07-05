@@ -7,6 +7,8 @@ node_modules/
 .expo/
 dist/
 web-build/
+eas.json
+
 
 # Native
 *.orig.*
@@ -33,3 +35,5 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+.vercel
