@@ -23,7 +23,7 @@ export function Details() {
         </Pressable>
       </View>
       <View style={{display: 'flex', width: '100%', paddingVertical: 10}}>
-        <Image style={stylesheet.image} source={{uri: details?.imageurl || ''}}/>
+        <Image style={stylesheet.image} source={{uri: details?.imageurl}}/>
         <Text style={stylesheet.id}>{details?.id}</Text>
         <SingleLineData text='Full name' value={details?.fullname}/>
         <SingleLineData text='Email' value={details?.email}/>

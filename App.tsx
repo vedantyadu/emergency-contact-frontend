@@ -38,18 +38,15 @@ export default function App() {
 
   const [isLoaded] = useFonts(customFonts)
 
-  // useEffect(() => {
-  //   const open = async () => {
-  //     const initialURL = await Linking.getInitialURL()
-  //     const scheme = Linking.parse(initialURL as string)
-  //     console.log(scheme)
-  //     console.log(prefix)
-  //     if (Platform.OS == 'web') {
-  //       Linking.openURL('exp://192.168.1.4:8081/--/qr')
-  //     }
-  //   }
-  //   open()
-  // }, [])
+  useEffect(() => {
+    const open = async () => {
+      const initialURL = await Linking.parseInitialURLAsync()
+      if (Platform.OS == 'web') {
+        Linking.openURL(`emergencycontact://${initialURL.path}`)
+      }
+    }
+    open()
+  }, [])
 
   if (isLoaded) {
     return (
